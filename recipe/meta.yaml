@@ -19,13 +19,13 @@
 # but in practice has the same functionality -- see discussion here:
 # https://git-annex.branchable.com/forum/standalone_tarballs_for_specific_versions/#comment-d15b771fb5d23ce0c8dfb7f1c25064c5
 #
-{% set version = "8.20211011" %}
+{% set version = "8.20211028" %}
 {% set version_printed = version %}  # [not nodep]
-{% set version_printed = "8.20210904" %}  # [nodep]
+{% set version_printed = "8.20211012-geb95ed486" %}  # [nodep]
 
-{% set sha256 = "8dc76be8821227601eaca42b4cf08c02f8296984d08649cf6d7655188348470b" %}  # [not nodep]
-{% set sha256 = "a9edc72a29d8b3e7cfb279fd3617547a6770418fd511609006b1df0a3e147bab" %}  # [nodep]
-{% set size = "51486557" %}  # [nodep]
+{% set sha256 = "cf5efe15e68d467daad673bec10037a27a78da7e4af9b4a85e10980bd90ace2d" %}  # [not nodep]
+{% set sha256 = "76351da63cef2e8b90a6c5fa42f51b9854ba17965df729176557fe6ba73e5df7" %}  # [nodep]
+{% set size = "51426621" %}  # [nodep]
 
 {% set nodep = True %}  # [nodep]
 {% set nodep = False %}  # [not nodep]
@@ -49,9 +49,16 @@
 
 # ghc_src_version must correspond to the ghc version of the LTS Haskell version specified in the
 # resolver: line in stack.yaml file which is at the root of the git-annex source archive.
-# E.g. for resolver: lts-16.27 the ghc version given at https://www.stackage.org/lts-16.27 is 8.8.4
+# E.g. for resolver: lts-18.13 the ghc version given at https://www.stackage.org/lts-18.13 is 8.10.7
+{% set ghc_src2_version = "8.10.7" %}
+{% set ghc_src2_sha256 = "e3eef6229ce9908dfe1ea41436befb0455fefb1932559e860ad4c606b0d03c9d" %}
+
+# ghc_src_version must be recent enough to compile ghc_src2_version.
+# E.g. for ghc_src2_version 8.10.7, the page at https://www.haskell.org/ghc/download_ghc_8_10_7.html#sources
+# says ghc_src_version must be at least 8.6
 {% set ghc_src_version = "8.8.4" %}
 {% set ghc_src_sha256 = "f0505e38b2235ff9f1090b51f44d6c8efd371068e5a6bb42a2a6d8b67b5ffc2d" %}
+
 # ghc_bootstrap_version must be recent enough to compile ghc_src_version.
 # E.g. for ghc_src_version 8.8.4, the page at https://www.haskell.org/ghc/download_ghc_8_8_4.html#sources
 # says ghc_boostrap_version must be at least 8.4
@@ -77,6 +84,10 @@ source:
   - url: https://downloads.haskell.org/~ghc/{{ ghc_src_version }}/ghc-{{ ghc_src_version }}-src.tar.xz
     sha256: {{ ghc_src_sha256 }}
     folder: ghc_src
+
+  - url: https://downloads.haskell.org/~ghc/{{ ghc_src2_version }}/ghc-{{ ghc_src2_version }}-src.tar.xz
+    sha256: {{ ghc_src2_sha256 }}
+    folder: ghc_src2
 
 build:
   number: {{ build }}
