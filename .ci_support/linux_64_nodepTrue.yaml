@@ -3,7 +3,7 @@ bzip2:
 c_compiler:
 - gcc
 c_compiler_version:
-- '10'
+- '11'
 cdt_name:
 - cos6
 channel_sources:
@@ -15,7 +15,7 @@ curl:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '10'
+- '11'
 dbus:
 - '1'
 docker_image:
@@ -27,7 +27,7 @@ libffi:
 libiconv:
 - '1'
 libxml2:
-- '2.9'
+- '2.10'
 ncurses:
 - '6'
 nodep:
