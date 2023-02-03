@@ -111,6 +111,10 @@ df
 echo "========CHECKING FREE SPACE==========="
 df .
 
+# To overcome "error: possibly undefined macro: _AC_PROG_CC_C99" due to too new autoconf
+# Workaround from https://gitlab.haskell.org/ghc/ghc/-/commit/ad2ef3a13f1eb000eab8e3d64592373b91a52806 :
+sed -i -e 's,_AC_PROG_CC_C99,AC_PROG_CC_C99,g' aclocal.m4
+
 ./boot
 ./configure --prefix=${GHC_SRC_PREFIX}  --with-gmp-includes=$PREFIX/include --with-gmp-libraries=$PREFIX/lib --with-system-libffi
 

@@ -40,14 +40,14 @@ Current build status
               <td>linux_64_nodepFalse</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5002&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/git-annex-feedstock?branchName=main&jobName=linux&configuration=linux_64_nodepFalse" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/git-annex-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_nodepFalse" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>linux_64_nodepTrue</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5002&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/git-annex-feedstock?branchName=main&jobName=linux&configuration=linux_64_nodepTrue" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/git-annex-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_nodepTrue" alt="variant">
                 </a>
               </td>
             </tr>
