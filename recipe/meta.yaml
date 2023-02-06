@@ -32,7 +32,7 @@
 {% set nodep = True %}  # [nodep]
 {% set nodep = False %}  # [not nodep]
 
-{% set build = 0 %}
+{% set build = 1 %}
 # prioritize non-nodep variant via build number
 {% if not nodep %}
 {% set build = build + 100 %}
@@ -106,6 +106,11 @@ build:
   skip: True  # [not linux]
   string: "alldep_h{{ PKG_HASH }}_{{ build }}"  # [not nodep]
   script: ${RECIPE_DIR}/build_nodepFalse.sh
+  # Tracked features also de-prioritize that build
+  # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#track-features
+  # and we want to de-prioritize standalone build (it is slower etc)
+  track_features:
+    - standalone  # [nodep]
 
 requirements:
   build:
