@@ -3,9 +3,9 @@ bzip2:
 c_compiler:
 - gcc
 c_compiler_version:
-- '12'
+- '13'
 cdt_name:
-- cos6
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -15,7 +15,7 @@ curl:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '12'
+- '13'
 dbus:
 - '1'
 docker_image:
@@ -27,7 +27,7 @@ libffi:
 libiconv:
 - '1'
 libxml2:
-- '2.11'
+- '2.13'
 ncurses:
 - '6'
 nodep:
@@ -44,4 +44,4 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
 zlib:
-- '1.2'
+- '1'
